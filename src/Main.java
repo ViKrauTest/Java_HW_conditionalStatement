@@ -1,19 +1,20 @@
 public class Main {
     public static void main(String[] args) {
 
-        int startingBalance = 100;
-        int refillAmount = 1100;
-        int finalBalance;
+        // все начальные значения указываются в копейках
+        int startingBalance = 10000;
+        int refillAmount = 110000;
+        float finalBalance;
         int bonus = 0;
 
-        if (refillAmount > 1000) {
-            bonus = refillAmount / 100;
-            finalBalance = startingBalance + refillAmount + bonus;
+        if (refillAmount > 100000) {
+            bonus = refillAmount / 10000;
+            finalBalance = (startingBalance + refillAmount) / 100 + bonus;
         } else {
-            finalBalance = startingBalance + refillAmount;
+            finalBalance = (startingBalance + refillAmount) / 100;
         }
 
-        System.out.println("Итоговый баланс  " + finalBalance);
-        System.out.println("Начисленные бонусы  " + bonus);
+        System.out.println("Итоговый баланс:  " + finalBalance + " рублей");
+        System.out.println("Начисленные бонусы:  " + bonus + " рублей");
     }
 }
